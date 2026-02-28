@@ -80,16 +80,12 @@ export function InteractiveTutorial({ step, activeTab, onAdvance }: InteractiveT
         {/* Tooltip */}
         {targetRect && (
           <motion.div
-            initial={false}
-            animate={{
-              x: targetRect.x + targetRect.width / 2 - 120,
-              y: step === 0 ? targetRect.y + targetRect.height + 20 : targetRect.y - 120,
-            }}
-            transition={{ type: 'spring', damping: 20, stiffness: 100 }}
-            className="absolute w-[240px] bg-white rounded-2xl p-4 shadow-2xl pointer-events-auto border-2 border-pink-400"
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            className="absolute top-12 left-4 right-4 bg-white rounded-2xl p-6 shadow-2xl pointer-events-auto border-2 border-pink-400 z-50"
           >
             <div className="flex flex-col gap-3">
-              <p className="text-gray-800 font-bold text-center">
+              <p className="text-gray-800 font-bold text-center text-lg">
                 {step === 0 && "Tap Cisca to earn Affection! (Get 5 to continue)"}
                 {step === 1 && "Great! Now open the Confess menu below."}
                 {step === 2 && "Here you convert Affection to Trust. Try it when you have enough!"}
@@ -100,19 +96,12 @@ export function InteractiveTutorial({ step, activeTab, onAdvance }: InteractiveT
               {(step === 2 || step === 4) && (
                 <button
                   onClick={() => onAdvance(step + 1)}
-                  className="w-full py-2 bg-pink-500 text-white rounded-xl font-bold hover:bg-pink-600"
+                  className="w-full py-3 mt-2 bg-pink-500 text-white rounded-xl font-bold hover:bg-pink-600"
                 >
                   {step === 4 ? "Finish Tutorial" : "Next"}
                 </button>
               )}
             </div>
-            
-            {/* Pointer triangle */}
-            <div 
-              className={`absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-pink-400 transform rotate-45 ${
-                step === 0 ? '-top-2 border-t-2 border-l-2' : '-bottom-2 border-b-2 border-r-2'
-              }`} 
-            />
           </motion.div>
         )}
       </div>

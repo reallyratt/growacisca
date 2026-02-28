@@ -171,8 +171,8 @@ export function CenterStage({ bondLevel, onClick, clickPower }: CenterStageProps
           {/* Torso */}
           {form === 1 && (
             <div className="w-full h-full flex flex-col items-center z-20">
-              <div className="w-full h-16 bg-blue-400 rounded-t-2xl shadow-sm" />
-              <div className="w-full h-12 bg-indigo-600 rounded-b-md shadow-inner" />
+              <div className="w-full h-14 bg-blue-400 rounded-t-2xl shadow-sm" />
+              <div className="w-[110%] h-14 bg-indigo-600 rounded-b-xl shadow-inner" />
             </div>
           )}
           {form === 2 && (
@@ -195,18 +195,18 @@ export function CenterStage({ bondLevel, onClick, clickPower }: CenterStageProps
         </div>
 
         {/* Legs */}
-        <div className="flex gap-3 -mt-4 z-0">
-          <div className="w-5 h-20 bg-[#ffe0bd] rounded-b-full flex flex-col justify-end items-center pb-1">
+        <div className="flex gap-4 -mt-4 z-0">
+          <div className="w-5 h-22 bg-[#ffe0bd] rounded-b-full flex flex-col justify-end items-center pb-0">
             {/* Shoes */}
-            {form === 1 && <div className="w-6 h-4 bg-gray-100 rounded-full" />}
-            {form === 2 && <div className="w-6 h-4 bg-pink-500 rounded-full" />}
-            {form === 3 && <div className="w-6 h-5 bg-purple-800 rounded-full" />}
+            {form === 1 && <div className="w-7 h-5 bg-gray-700 rounded-t-xl rounded-b-sm" />}
+            {form === 2 && <div className="w-7 h-5 bg-pink-500 rounded-t-xl rounded-b-sm" />}
+            {form === 3 && <div className="w-7 h-6 bg-purple-800 rounded-t-xl rounded-b-sm" />}
           </div>
-          <div className="w-5 h-20 bg-[#ffe0bd] rounded-b-full flex flex-col justify-end items-center pb-1">
+          <div className="w-5 h-22 bg-[#ffe0bd] rounded-b-full flex flex-col justify-end items-center pb-0">
             {/* Shoes */}
-            {form === 1 && <div className="w-6 h-4 bg-gray-100 rounded-full" />}
-            {form === 2 && <div className="w-6 h-4 bg-pink-500 rounded-full" />}
-            {form === 3 && <div className="w-6 h-5 bg-purple-800 rounded-full" />}
+            {form === 1 && <div className="w-7 h-5 bg-gray-700 rounded-t-xl rounded-b-sm" />}
+            {form === 2 && <div className="w-7 h-5 bg-pink-500 rounded-t-xl rounded-b-sm" />}
+            {form === 3 && <div className="w-7 h-6 bg-purple-800 rounded-t-xl rounded-b-sm" />}
           </div>
         </div>
 
@@ -229,7 +229,7 @@ export function CenterStage({ bondLevel, onClick, clickPower }: CenterStageProps
             animate={{ opacity: 0, y: heart.y - 120, scale: 1.5 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="fixed pointer-events-none z-50 flex flex-col items-center"
+            className="fixed top-0 left-0 pointer-events-none z-50 flex flex-col items-center"
           >
             <Heart className="w-8 h-8 text-pink-500 fill-pink-500" />
             <span className="text-pink-600 font-bold font-mono text-lg drop-shadow-md">
